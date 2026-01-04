@@ -1,30 +1,18 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
-  color: #ffffff;
-  padding: 30px;
-}
+const passwords = {
+  andi: "ANDI123",
+  budi: "BUDI456",
+  citra: "CITRA789",
+  Rahma: "Rahma3107"
+};
 
-h2 {
-  margin-bottom: 10px;
-}
-
-.buyer {
-  padding: 12px;
-  margin: 8px 0;
-  background: #1f1f1f;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.buyer:hover {
-  background: #333;
-}
-
-video {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 600px;
-  display: none;
+function openVideo(name) {
+  const input = prompt("Masukkan password:");
+  if (input === passwords[name]) {
+    const video = document.getElementById("videoPlayer");
+    video.src = `videos/${name}.mp4`;
+    video.style.display = "block";
+    video.play();
+  } else {
+    alert("Password salah!");
+  }
 }
