@@ -1,21 +1,127 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Video Bukti Packing</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Video Packing – Dropscent</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+    }
+
+    .buyer {
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: 0.25s;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .buyer:hover {
+      transform: scale(1.02);
+      background: linear-gradient(135deg, #2e2e2e, #3a3a3a);
+    }
+
+    .buyer span {
+      display: block;
+      font-size: 12px;
+      color: #bdbdbd;
+      margin-top: 3px;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 18px;
+      border-radius: 12px;
+      display: none;
+      background: #000;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 11px;
+      color: #9a9a9a;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>DROPSCENT</h1>
+    <p class="subtitle">Video Packing Decant Original</p>
 
-<h2>📦 Video Bukti Packing</h2>
-<p>Silakan klik nama Anda lalu masukkan password yang diberikan setelah pembelian.</p>
+    <div class="buyer" onclick="openVideo('andi')">
+      Andi
+      <span>Order #001</span>
+    </div>
 
-<div class="buyer" onclick="openVideo('andi')">Andi – Order #001</div>
-<div class="buyer" onclick="openVideo('budi')">Budi – Order #002</div>
-<div class="buyer" onclick="openVideo('citra')">Citra – Order #003</div>
+    <div class="buyer" onclick="openVideo('budi')">
+      Budi
+      <span>Order #002</span>
+    </div>
 
-<video id="videoPlayer" controls></video>
+   <div class="buyer" onclick="openVideo('Rahma')">
+      Budi
+      <span>Order #003</span>
+    </div>
 
-<script src="script.js"></script>
+    <video id="videoPlayer" controls></video>
+
+    <footer>
+      © Dropscent • Authentic Decant
+    </footer>
+  </div>
+
+  <script>
+    const passwords = {
+      andi: "ANDI123",
+      budi: "BUDI456",
+      Rahma: "alfi3107"
+    };
+
+    function openVideo(name) {
+      const input = prompt("Masukkan password pembelian:");
+      if (input === passwords[name]) {
+        const video = document.getElementById("videoPlayer");
+        video.src = `videos/${name}.mp4`;
+        video.style.display = "block";
+        video.scrollIntoView({ behavior: "smooth" });
+        video.play();
+      } else {
+        alert("Password salah atau tidak valid");
+      }
+    }
+  </script>
 </body>
 </html>
