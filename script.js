@@ -1,7 +1,8 @@
 const passwords = {
   andi: "ANDI123",
   budi: "BUDI456",
-  citra: "CITRA789"
+  citra: "CITRA789",
+  rahma: "RAHMA123"
 };
 
 function openVideo(name) {
