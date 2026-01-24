@@ -162,7 +162,7 @@
       const input = prompt("Masukkan password pembelian:");
       if (input === passwords[name]) {
         const video = document.getElementById("videoPlayer");
-        video.src = `${name}.mp4`;
+        video.src = ``videos/${name}.mp4`;
         video.style.display = "block";
         video.scrollIntoView({ behavior: "smooth" });
         video.play();
@@ -173,6 +173,7 @@
   </script>
 </body>
 </html>
+
 
 
 
